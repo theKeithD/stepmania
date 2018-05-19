@@ -90,6 +90,8 @@ static const StepsTypeInfo g_StepsTypeInfos[] = {
 	{ "techno-double4",	8,	true,	StepsTypeCategory_Double },
 	{ "techno-double5",	10,	true,	StepsTypeCategory_Double },
 	{ "techno-double8",	16,	true,	StepsTypeCategory_Double },
+	// museca
+	{ "museca-single",	16,	true,	StepsTypeCategory_Single },
 	// pop'n music
 	{ "pnm-five",		5,	true,	StepsTypeCategory_Single },	// called "pnm" for backward compat
 	{ "pnm-nine",		9,	true,	StepsTypeCategory_Single },	// called "pnm" for backward compat
@@ -2414,6 +2416,7 @@ static const Style g_Style_Techno_Double8 =
 	false, // m_bLockDifficulties
 };
 
+
 static const Style *g_apGame_Techno_Styles[] =
 {
 	&g_Style_Techno_Single4,
@@ -2476,6 +2479,149 @@ static const Game g_Game_Techno =
 		&g_AutoKeyMappings_Techno
 	},
 	{
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+	},
+	TNS_W1,	// m_mapW1To
+	TNS_W2,	// m_mapW2To
+	TNS_W3,	// m_mapW3To
+	TNS_W4,	// m_mapW4To
+	TNS_W5,	// m_mapW5To
+};
+
+/** museca *******************************************************************/
+static const Style g_Style_Museca_Single=
+{	// STYLE_MUSECA_SINGLE
+	true,				// m_bUsedForGameplay
+	true,				// m_bUsedForEdit
+	true,				// m_bUsedForDemonstration
+	true,				// m_bUsedForHowToPlay
+	"museca",			// m_szName
+	StepsType_museca_single,	// m_StepsType
+	StyleType_OnePlayerOneSide,		// m_StyleType
+	16,				// m_iColsPerPlayer
+{	// m_ColumnInfo[NUM_PLAYERS][MAX_COLS_PER_PLAYER];
+	{	// PLAYER_1
+		{ TRACK_1, nullptr },
+		{ TRACK_2, nullptr },
+		{ TRACK_3, nullptr },
+		{ TRACK_4, nullptr },
+		{ TRACK_5, nullptr },
+		{ TRACK_6, nullptr },
+		{ TRACK_7, nullptr },
+		{ TRACK_8, nullptr },
+		{ TRACK_9, nullptr },
+		{ TRACK_10, nullptr },
+		{ TRACK_11, nullptr },
+		{ TRACK_12, nullptr },
+		{ TRACK_13, nullptr },
+		{ TRACK_14, nullptr },
+		{ TRACK_15, nullptr },
+		{ TRACK_16, nullptr },
+	},
+	{	// PLAYER_2
+		{ TRACK_1, nullptr },
+		{ TRACK_2, nullptr },
+		{ TRACK_3, nullptr },
+		{ TRACK_4, nullptr },
+		{ TRACK_5, nullptr },
+		{ TRACK_6, nullptr },
+		{ TRACK_7, nullptr },
+		{ TRACK_8, nullptr },
+		{ TRACK_9, nullptr },
+		{ TRACK_10, nullptr },
+		{ TRACK_11, nullptr },
+		{ TRACK_12, nullptr },
+		{ TRACK_13, nullptr },
+		{ TRACK_14, nullptr },
+		{ TRACK_15, nullptr },
+		{ TRACK_16, nullptr },
+	},
+},
+	{	// m_iInputColumn[NUM_GameController][NUM_GameButton]
+		{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, Style::END_MAPPING },
+		{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, Style::END_MAPPING }
+	},
+	{	// m_iColumnDrawOrder[MAX_COLS_PER_PLAYER];
+		15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0
+	},
+	false, // m_bCanUseBeginnerHelper
+	false, // m_bLockDifficulties
+};
+
+static const Style *g_apGame_Museca_Styles[] =
+{
+	&g_Style_Museca_Single,
+	nullptr
+};
+
+static const AutoMappings g_AutoKeyMappings_Museca = AutoMappings(
+	"",
+	"",
+	"",
+	AutoMappingEntry(0, KEY_SPACE, MUSECA_BUTTON_PEDAL, false),
+	AutoMappingEntry(0, KEY_Cz, MUSECA_BUTTON_TOP_LEFT, false),
+	AutoMappingEntry(0, KEY_Cx, MUSECA_BUTTON_BOT_LEFT, false),
+	AutoMappingEntry(0, KEY_Cc, MUSECA_BUTTON_TOP_MID, false),
+	AutoMappingEntry(0, KEY_Cv, MUSECA_BUTTON_BOT_RIGHT, false),
+	AutoMappingEntry(0, KEY_Cb, MUSECA_BUTTON_TOP_RIGHT, false),
+	AutoMappingEntry(0, KEY_Ca, MUSECA_SPIN_L_TOP_LEFT, false),
+	AutoMappingEntry(0, KEY_Cs, MUSECA_SPIN_L_BOT_LEFT, false),
+	AutoMappingEntry(0, KEY_Cd, MUSECA_SPIN_L_TOP_MID, false),
+	AutoMappingEntry(0, KEY_Cf, MUSECA_SPIN_L_BOT_RIGHT, false),
+	AutoMappingEntry(0, KEY_Cg, MUSECA_SPIN_L_TOP_RIGHT, false),
+	AutoMappingEntry(0, KEY_Cq, MUSECA_SPIN_R_TOP_LEFT, false),
+	AutoMappingEntry(0, KEY_Cw, MUSECA_SPIN_R_BOT_LEFT, false),
+	AutoMappingEntry(0, KEY_Ce, MUSECA_SPIN_R_TOP_MID, false),
+	AutoMappingEntry(0, KEY_Cr, MUSECA_SPIN_R_BOT_RIGHT, false),
+	AutoMappingEntry(0, KEY_Ct, MUSECA_SPIN_R_TOP_RIGHT, false)
+);
+
+static const Game g_Game_Museca =
+{
+	"museca",						// m_szName
+	g_apGame_Museca_Styles,				// m_apStyles
+	true,						// m_bCountNotesSeparately
+	false, // m_bTickHolds
+	false, // m_PlayersHaveSeparateStyles
+	{						// m_InputScheme
+		"museca",					// m_szName
+		NUM_MUSECA_BUTTONS,			// m_iButtonsPerController
+		{	// m_szButtonNames
+			{ "Pedal",				GAME_BUTTON_START },
+			{ "TopLeftButton",	GameButton_Invalid },
+			{ "BotLeftButton",	GameButton_Invalid },
+			{ "TopMidButton",		GameButton_Invalid },
+			{ "BotRightButton",	GameButton_Invalid },
+			{ "TopRightButton",	GameButton_Invalid },
+			{ "TopLeftSpinL",		GameButton_Invalid },
+			{ "BotLeftSpinL",		GAME_BUTTON_UP },
+			{ "TopMidSpinL",		GameButton_Invalid },
+			{ "BotRightSpinL",	GAME_BUTTON_LEFT },
+			{ "TopRightSpinL",	GameButton_Invalid },
+			{ "TopLeftSpinR",		GameButton_Invalid },
+			{ "BotLeftSpinR",		GAME_BUTTON_DOWN },
+			{ "TopMidSpinR",		GameButton_Invalid },
+			{ "BotRightSpinR",	GAME_BUTTON_RIGHT },
+			{ "TopRightSpinR",	GameButton_Invalid },
+		},
+		&g_AutoKeyMappings_Museca
+	},
+	{
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
+		{ GameButtonType_Step },
 		{ GameButtonType_Step },
 		{ GameButtonType_Step },
 		{ GameButtonType_Step },
@@ -3139,6 +3285,7 @@ static const Game *g_Games[] =
 	&g_Game_Beat,
 	&g_Game_Maniax,
 	&g_Game_Techno,
+	&g_Game_Museca,
 	&g_Game_Popn,
 	&g_Game_Lights,
 	&g_Game_Kickbox,

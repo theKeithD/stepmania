@@ -76,6 +76,7 @@ function GameCompatibleModes()
 		-- todo: add versus modes for technomotion
 		techno = "Single4,Single5,Single8,Double4,Double5,Double8",
 		lights = "Single", -- lights shouldn't be playable
+		museca = "Single"
 	}
 	return Modes[CurGameName()]
 end

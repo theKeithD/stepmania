@@ -20,7 +20,7 @@
 
 #include <map>
 
-const int NUM_EDIT_BUTTON_COLUMNS = 10;
+const int NUM_EDIT_BUTTON_COLUMNS = 16;
 struct MenuDef;
 
 /** @brief What is going on with the Editor? */
@@ -49,6 +49,12 @@ enum EditButton
 	EDIT_BUTTON_COLUMN_7,
 	EDIT_BUTTON_COLUMN_8,
 	EDIT_BUTTON_COLUMN_9,
+	EDIT_BUTTON_COLUMN_10,
+	EDIT_BUTTON_COLUMN_11,
+	EDIT_BUTTON_COLUMN_12,
+	EDIT_BUTTON_COLUMN_13,
+	EDIT_BUTTON_COLUMN_14,
+	EDIT_BUTTON_COLUMN_15,
 
 	// These are modifiers to EDIT_BUTTON_COLUMN_*.
 	EDIT_BUTTON_RIGHT_SIDE,

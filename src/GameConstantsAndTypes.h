@@ -105,6 +105,7 @@ enum StepsType
 	StepsType_techno_double4,
 	StepsType_techno_double5,
 	StepsType_techno_double8,
+	StepsType_museca_single,
 	StepsType_popn_five,
 	StepsType_popn_nine,
 	StepsType_lights_cabinet,

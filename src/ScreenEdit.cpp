@@ -137,16 +137,22 @@ std::unordered_map<std::string, EditButton> name_to_edit_button;
 void ScreenEdit::InitEditMappings()
 {
 	// Created courtesy of query replace regex.
-	name_to_edit_button["COLUMN_0"]= EDIT_BUTTON_COLUMN_0;
-	name_to_edit_button["COLUMN_1"]= EDIT_BUTTON_COLUMN_1;
-	name_to_edit_button["COLUMN_2"]= EDIT_BUTTON_COLUMN_2;
-	name_to_edit_button["COLUMN_3"]= EDIT_BUTTON_COLUMN_3;
-	name_to_edit_button["COLUMN_4"]= EDIT_BUTTON_COLUMN_4;
-	name_to_edit_button["COLUMN_5"]= EDIT_BUTTON_COLUMN_5;
-	name_to_edit_button["COLUMN_6"]= EDIT_BUTTON_COLUMN_6;
-	name_to_edit_button["COLUMN_7"]= EDIT_BUTTON_COLUMN_7;
-	name_to_edit_button["COLUMN_8"]= EDIT_BUTTON_COLUMN_8;
-	name_to_edit_button["COLUMN_9"]= EDIT_BUTTON_COLUMN_9;
+	name_to_edit_button["COLUMN_0"]=  EDIT_BUTTON_COLUMN_0;
+	name_to_edit_button["COLUMN_1"]=  EDIT_BUTTON_COLUMN_1;
+	name_to_edit_button["COLUMN_2"]=  EDIT_BUTTON_COLUMN_2;
+	name_to_edit_button["COLUMN_3"]=  EDIT_BUTTON_COLUMN_3;
+	name_to_edit_button["COLUMN_4"]=  EDIT_BUTTON_COLUMN_4;
+	name_to_edit_button["COLUMN_5"]=  EDIT_BUTTON_COLUMN_5;
+	name_to_edit_button["COLUMN_6"]=  EDIT_BUTTON_COLUMN_6;
+	name_to_edit_button["COLUMN_7"]=  EDIT_BUTTON_COLUMN_7;
+	name_to_edit_button["COLUMN_8"]=  EDIT_BUTTON_COLUMN_8;
+	name_to_edit_button["COLUMN_9"]=  EDIT_BUTTON_COLUMN_9;
+	name_to_edit_button["COLUMN_10"]= EDIT_BUTTON_COLUMN_10;
+	name_to_edit_button["COLUMN_11"]= EDIT_BUTTON_COLUMN_11;
+	name_to_edit_button["COLUMN_12"]= EDIT_BUTTON_COLUMN_12;
+	name_to_edit_button["COLUMN_13"]= EDIT_BUTTON_COLUMN_13;
+	name_to_edit_button["COLUMN_14"]= EDIT_BUTTON_COLUMN_14;
+	name_to_edit_button["COLUMN_15"]= EDIT_BUTTON_COLUMN_15;
 
 	name_to_edit_button["RIGHT_SIDE"]= EDIT_BUTTON_RIGHT_SIDE;
 	name_to_edit_button["LAY_ROLL"]= EDIT_BUTTON_LAY_ROLL;
@@ -425,6 +431,12 @@ void ScreenEdit::InitEditMappings()
 	m_EditMappingsDeviceInput.button[EDIT_BUTTON_COLUMN_7][0] = DeviceInput(DEVICE_KEYBOARD, KEY_C8);
 	m_EditMappingsDeviceInput.button[EDIT_BUTTON_COLUMN_8][0] = DeviceInput(DEVICE_KEYBOARD, KEY_C9);
 	m_EditMappingsDeviceInput.button[EDIT_BUTTON_COLUMN_9][0] = DeviceInput(DEVICE_KEYBOARD, KEY_C0);
+	m_EditMappingsDeviceInput.button[EDIT_BUTTON_COLUMN_10][0]= DeviceInput(DEVICE_KEYBOARD, KEY_KP_C1);
+	m_EditMappingsDeviceInput.button[EDIT_BUTTON_COLUMN_11][0]= DeviceInput(DEVICE_KEYBOARD, KEY_KP_C2);
+	m_EditMappingsDeviceInput.button[EDIT_BUTTON_COLUMN_12][0]= DeviceInput(DEVICE_KEYBOARD, KEY_KP_C3);
+	m_EditMappingsDeviceInput.button[EDIT_BUTTON_COLUMN_13][0]= DeviceInput(DEVICE_KEYBOARD, KEY_KP_C4);
+	m_EditMappingsDeviceInput.button[EDIT_BUTTON_COLUMN_14][0]= DeviceInput(DEVICE_KEYBOARD, KEY_KP_C5);
+	m_EditMappingsDeviceInput.button[EDIT_BUTTON_COLUMN_15][0]= DeviceInput(DEVICE_KEYBOARD, KEY_KP_C6);
 
 	m_EditMappingsDeviceInput.button[EDIT_BUTTON_RIGHT_SIDE][0] = DeviceInput(DEVICE_KEYBOARD, KEY_LALT);
 	m_EditMappingsDeviceInput.button[EDIT_BUTTON_RIGHT_SIDE][1] = DeviceInput(DEVICE_KEYBOARD, KEY_RALT);
@@ -2205,6 +2217,12 @@ bool ScreenEdit::InputEdit( const InputEventPlus &input, EditButton EditB )
 	case EDIT_BUTTON_COLUMN_7:
 	case EDIT_BUTTON_COLUMN_8:
 	case EDIT_BUTTON_COLUMN_9:
+	case EDIT_BUTTON_COLUMN_10:
+	case EDIT_BUTTON_COLUMN_11:
+	case EDIT_BUTTON_COLUMN_12:
+	case EDIT_BUTTON_COLUMN_13:
+	case EDIT_BUTTON_COLUMN_14:
+	case EDIT_BUTTON_COLUMN_15:
 		{
 			if( input.type != IET_FIRST_PRESS )
 				return false;	// We only care about first presses

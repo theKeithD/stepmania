@@ -1271,6 +1271,13 @@ static vector<vector<string> > button_lists = {
 	{"DownLeft", "UpLeft", "Center", "UpRight", "DownRight", "DownLeft", "UpLeft", "Center", "UpRight", "DownRight"},
 // StepsType_techno_double8,
 	{"DownLeft", "Left", "UpLeft", "Down", "Up", "UpRight", "Right", "DownRight", "DownLeft", "Left", "UpLeft", "Down", "Up", "UpRight", "Right", "DownRight"},
+// StepsType_museca_single,
+	{ "Pedal", "TopLeftButton", "BotLeftButton",
+	"TopMidButton", "BotRightButton", "TopRightButton",
+	"TopLeftSpinL", "BotLeftSpinL", "TopMidSpinL",
+	"BotRightSpinL", "TopRightSpinL",
+	"TopLeftSpinR", "BotLeftSpinR", "TopMidSpinR",
+	"BotRightSpinR", "TopRightSpinR" },
 // StepsType_popn_five,
 	{"Left Green", "Left Blue", "Red", "Right Blue", "Right Green"},
 // StepsType_popn_nine,
@@ -1284,7 +1291,7 @@ static vector<vector<string> > button_lists = {
 // StepsType_kickbox_insect,
 	{"LeftFoot", "UpLeftFist", "DownLeftFist", "DownRightFist", "UpRightFist", "RightFoot"},
 // StepsType_kickbox_arachnid,
-	{"DownLeftFoot", "UpLeftFoot", "UpLeftFist", "DownLeftFist", "DownRightFist", "UpRightFist", "UpRightFoot", "DownRightFoot"}
+	{"DownLeftFoot", "UpLeftFoot", "UpLeftFist", "DownLeftFist", "DownRightFist", "UpRightFist", "UpRightFoot", "DownRightFoot"},
 };
 
 bool NoteSkinLoader::supports_needed_buttons(StepsType stype, bool disable_supports_all) const
