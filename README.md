@@ -1,30 +1,34 @@
-stepmania-musecaeditor
-======================
+`stepmania-musecaeditor`
+========================
 
 ## About This Fork
 
-This fork adds a new `museca-single` game mode, to be used in conjunction with [a fork of DragonMinded's sm2museca conversion script](https://github.com/theKeithD/sm2museca). This mode defines a 16-lane single player mode, rather than a 16-lane double play mode like the ones offered by `bm` and `techno`.
+This fork adds a new `museca-single` game mode, to be used in conjunction with [a fork of DragonMinded's `sm2museca` conversion script](https://github.com/theKeithD/sm2museca). This mode defines a 16-lane single player mode, rather than a 16-lane double play mode like the ones offered by `bm` and `techno`.
+
 The game mode is designed mostly for use in Edit Mode. If for some reason you feel like actually trying to play this mode normally, good luck and have fun.
+
 The included `museca` noteskin is based on the `retrobar-splithand_whiteblue` noteskin included in StepMania 5.0. Tap notes in the spin lanes are visually shifted to appear in the main tap note lanes.
+
 As an added bonus, the maximum number of columns addressible in the editor has been extended from 10 to 16! Numpad keys 1-6 cover the overflow.
 
-## Lane Layout, Charting, and Design Notes/Ramblings
+## Lane Layout, Charting, and Design Notes
 
-There is 1 pedal lane, and then 3 channels of 5 lanes each. These 3 sets of 5 lanes can each be thought of as their own channel.
+There is 1 pedal lane, and then 3 channels of 5 lanes each.
 
-- `CH0 @ sm_lane[0]:      pedal (this could also move to the very end, but it feels more at home next to CH1)`
-- `CH1 @ sm_lane[1..5]:   taps and holds`
-- `CH2 @ sm_lane[6..10]:  left spins`
-- `CH3 @ sm_lane[11..15]: right spins`
+    CH0 @ sm_lane[0]:      pedal (this could also move to the very end, but it feels more at home next to CH1)
+    CH1 @ sm_lane[1..5]:   taps and holds
+    CH2 @ sm_lane[6..10]:  left spins
+    CH3 @ sm_lane[11..15]: right spins
 
-### Mapping Examples [SM] => [Museca]
-- *Tap* in CH1, `sm[1]` => *Tap* in `msc[1]`
-- *Hold* in CH1, `sm[1]` => *Hold* in `msc[1]`
-- *Tap* in CH2, `sm[6]` => *Left spin* in `msc[1]`
-- *Tap* in CH3, `sm[11]` => *Right spin* in `msc[1]`
-- *Tap* in CH2 and CH3, `sm[6] and sm[11]` => *Non-directional spin* in `msc[1]`
-- *Hold start* in CH2 or CH3, `sm[6] or sm[11]` => *Start storm object event* in `msc[1]`
-- *Mine* in CH1 or CH2 or CH3, `sm[1] or sm[6] or sm[11]` => *End storm object event* in `msc[1]`
+
+### Mapping Examples
+- **Tap** in CH1, `sm[1]` => **Tap** in `msc[1]`
+- **Hold** in CH1, `sm[1]` => **Hold** in `msc[1]`
+- **Tap** in CH2, `sm[6]` => **Left spin** in `msc[1]`
+- **Tap** in CH3, `sm[11]` => **Right spin** in `msc[1]`
+- **Tap** in CH2 and CH3, `sm[6] and sm[11]` => **Non-directional spin** in `msc[1]`
+- **Hold *start*** in CH2 or CH3, `sm[6] or sm[11]` => **Start storm object event** in `msc[1]`
+- **Mine** in CH1 or CH2 or CH3, `sm[1] or sm[6] or sm[11]` => **End storm object event** in `msc[1]`
 
 ### Why 3 Channels?
 - Hold ends in StepMania don't have multiple end types, so we can't overlap a spinner of any kind onto a hold release
